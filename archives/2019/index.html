@@ -346,6 +346,145 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/07/05/STP/">
+            
+                <span>生成树</span>
+        </a>
+        <div class="abstract-content">
+            STP/RSTP/MSTP为什么要生成树协议？因为交换机工作原理导致的，防环
+STP(生成树)优先级默认为32768 最大为61440BPDU
+配置BPDU——交互参数进行生成树计算（计算过程如下）
+
+桥ID  ：优先级（默认32768  范围0-61440 取值4096）+mac           比小
+cost ：非根交换机到达根交换机所有经过的路径之和（进接口叠加）3.转发桥ID：优先级（默认32768  范围0-61440 取值4096）+mac           比小4.优先级加端口号  优先级默认为128配置BPDU的报文有8个参与计算的有四个注：**Config Tim...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/05</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/07/05/Eth-Trunk/">
+            
+                <span>Eth-Trunk</span>
+        </a>
+        <div class="abstract-content">
+            Eth-Trunk问题一在手动聚合的时候，A端配置好，而B端Eth-Trunk没做的时候，A端发送一个广播报文过去，会从B端传回来，引起环路，而在LACP中就不会出现这种问题，因为手动聚合时，接口是直接UP的，而LACP中它需要两端都起来交换报文，选取角色后才能进入转发状态
+转发原理它是将多条以太网物理链路，绑定为一条逻辑链路从而实现增加链路带宽的目的，形成负载分担，提高链路的可靠性
+Eth-Trunk 处于MAC子层和LLC子层之间，是一个链路层协议
+LLC 用来对链路进行管理的                                          MAC：媒体介质控制子层...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/05</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/07/05/CSS与iStack/">
+            
+                <span>CSS与iStack</span>
+        </a>
+        <div class="abstract-content">
+            集群角色主交换机：负责管理整个集群，集群中只有一台主交换机备交换机：主交换机的备份，在主交换机出现业务故障时，将主交换机的全部业务交替过来，集群中只有一个备交换机集群ID：及CSS id 用来表识和管理集群成员交换机的，集群中成员交换机的ID是唯一的集群优先级：主要用来选举的时候确定成员交换机的角色的，优先值越大的越高，优先级高的被选成主的可能性越高
+选举
+最先启动，并进入单框集群运行状态的的交换机为主交换机
+两台集群交换机同时启动，集群优先级高的交换机为主交换机
+两台集群交换机同时启动，且集群优先级相同的情况下，那么mac小的为主
+两台集群交换机同时启动，且集群优先级相同；mac也相同...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/05</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/07/05/端口安全/">
+            
+                <span>端口安全</span>
+        </a>
+        <div class="abstract-content">
+            端口安全动态安全MAC在端口下开启默认的端口安全功能，在该端口只能学习到一个相对应的mac地址，将其进行绑定，虽然它也是通过动态学习的mac地址，但是与普通动态学习不同的是，普通动态的学习过程是–看源mac，没有就进行绑定然后转发，而安全功能默认开启后，在那个接口下只能学习一个mac地址并进行转发（端口阀值可以手动改，默认为1）功能的作用是限制谁可以进来的(有老化时间)
+sticky MAC开启功能后，做静态绑定，匹配静态绑定的mac才能进入
+在mac表中存在静态还有安全表项，静态功能是对应转发给别人的，而安全表项是限制了谁能进来
+端口安全的拒绝方式
+protect 学习mac地址超过端...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/05</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/07/05/MAC/">
+            
+                <span>MAC</span>
+        </a>
+        <div class="abstract-content">
+            MACMAC表的信息问题一 mac表的信息解：在mac地址表能看到的信息（mac地址，对应接口，所属vlan）mac地址有48位，前24位为厂商标识，后24位为厂商给每一个设备所分配的mac地址问题二：mac地址如何判定有多少个
+
+客户机如果是终端 那么有多少张网卡 就有多少个mac地址2.交换机上面的mac地址是根据它上面有多少个vlanif来判定的   
+路由器是根据接口来判定的，每一个接口对应一个mac地址
+
+问题三一个mac对应多个接口？和一个接口对应多个mac？
+
+一个mac不能对应多个接口。（在同一交换上）因为mac有一个学习的过程，如果在a接口学习了，在b接口又学习了。第一...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/05</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/07/05/踌躇满志，吃喝度日/">
             
                 <span>踌躇满志，吃喝度日~</span>
@@ -499,9 +638,88 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 4
+        Total : 9
         </div>
         <!-- search  -->
         
@@ -511,6 +729,58 @@
     
     
     
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/07/05/STP/">生成树</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/07/05/MAC/">MAC</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/05</span><a class="archive-post-title" href="/2019/07/05/CSS与iStack/">CSS与iStack</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/05</span><a class="archive-post-title" href="/2019/07/05/端口安全/">端口安全</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/05</span><a class="archive-post-title" href="/2019/07/05/Eth-Trunk/">Eth-Trunk</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
     
     <div class="archive-year"> Invalid date </div>
     <ul class="year-list">
