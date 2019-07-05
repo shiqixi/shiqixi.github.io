@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>TCP/IP与OSI · Mr. Curiosity&#39;s Blog</title>
+    <title>踌躇满志，吃喝度日~ · Mr. Curiosity&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">石奇西与HCIE的恩怨情仇</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">TCP/IP与OSI</a>
+                <a href="#" class="post-name">踌躇满志，吃喝度日~</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            TCP/IP与OSI
+            踌躇满志，吃喝度日~
             <!-- 404 -->
             
         </h1>
@@ -266,12 +266,12 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">1.1k</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">79</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2018/12/15</span>
+                    <span class="post-intro-time">2019/07/05</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -395,36 +395,7 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p><strong>文本提示：本篇文章讲的是TCP/IP基础,对应着OSI模型</strong></p>
-<p>正文：</p>
-<h3 id="OSI"><a href="#OSI" class="headerlink" title="OSI"></a>OSI</h3><p>定义：OSI是Open System Interconnection的缩写，意为开放式系统互联。国际标准化组织（ISO）制定了OSI模型，该模型定义了不同计算机互联的标准，是设计和描述计算机网络通信的基本框架。</p>
-<blockquote>
-<p><strong>这是一种事实上被<a href="https://baike.baidu.com/item/TCP/IP%E5%8D%8F%E8%AE%AE" target="_blank" rel="noopener">TCP/IP</a> 4层模型淘汰的协议。在当今世界上没有大规模使用。</strong></p>
-</blockquote>
-<p>为什么要这个标准？<br>因为如果没有统一标准的话，市场和技术非常混乱</p>
-<h4 id="OSI七层模型"><a href="#OSI七层模型" class="headerlink" title="OSI七层模型"></a>OSI七层模型</h4><p> <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1571061033,2094359230&amp;fm=26&amp;gp=0.jpg" alt="七层模型"><br>每一层对应的协议：<br><img src="https://p0.cdn.img9.top/ipfs/QmSQgeqUWAPMdvtyEpUEgEi4uPV6WR9yr7LXzWUVLnmde7?0.PNG" alt="协议"></p>
-<blockquote>
-<p>TCP/IP 对应的OSI七层</p>
-</blockquote>
-<p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1544863406495&amp;di=2e7aaaa8980820cffd54cafa6cf2b9ca&amp;imgtype=0&amp;src=http%3A%2F%2Fuphotos.eepw.com.cn%2Ffetch%2F20180719%2F385019_1_0.jpg" alt="osi与tcp对应"><br><a href="https://blog.csdn.net/shaolei844918951/article/details/80278033" target="_blank" rel="noopener">tcp/ip csdn讲解</a><br><strong>TCP/IP 四层模型，五层结构。物理层和数据链路层，必须分开。</strong></p>
-<p>因为OSI太过复杂，而且当时TCP/IP已经在实际环境中大规模使用所以到目前为止我们现在使用的模型是TCP/IP 基于TCP/IP开发了很多协议去完善它，就得到<strong>TCP/IP协议簇</strong><br><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1544864600567&amp;di=05ec34cb17f846fd60d7639327410bf1&amp;imgtype=0&amp;src=http%3A%2F%2Florna8023.blog.51cto.com%2Fattachment%2F201010%2F30%2F777608_12883972500ULM.gif" alt="数据封装">添加包头<br>为什么要加<strong>协议</strong></p>
-<ol>
-<li>为了实现功能，数据在传输的过程中为了实现各种功能传输，必须带上此功能的协议报头去实现</li>
-<li>为了解封装</li>
-<li>数据的传输过程<br><img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=742779467,520558035&amp;fm=15&amp;gp=0.jpg" alt="数据传输过程"><h4 id="mac地址"><a href="#mac地址" class="headerlink" title="mac地址"></a>mac地址</h4><blockquote>
-<p>MAC（Media AccessControl，介质访问控制）地址，也叫硬件地址，长度是48比特（6字节），由16进制的数字组成，分为前24位和后24位：<br>前24位叫做组织唯一标志符（Organizationally Unique Identifier，即OUI），是由IEEE的注册管理机构给不同厂家分配的代码，区分了不同的厂家。<br>后24位是由厂家自己分配的，称为扩展标识符。同一个厂家生产的网卡中MAC地址后24位是不同的。<strong>形象地说，MAC地址就如同身份证上的身份证号码，具有全球唯一性。</strong>MAC地址不能跨网段传输</p>
-</blockquote>
-</li>
-</ol>
-<h4 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h4><p>意义：在网络中表示一台网络设备</p>
-<p>IP地址包含两部分：网络地址，主机地址</p>
-<h4 id="TCP和UDP的区别"><a href="#TCP和UDP的区别" class="headerlink" title="TCP和UDP的区别"></a>TCP和UDP的区别</h4><blockquote>
-<p>TCP的优点： 可靠，稳定 TCP的可靠体现在TCP在传递数据之前，会有三次握手来建立连接，而且在数据传递时，有确认、窗口、重传、拥塞控制机制，在数据传完后，还会断开连接用来节约系统资源。 TCP的缺点： 慢，效率低，占用系统资源高，易被攻击 TCP在传递数据之前，要先建连接，这会消耗时间，而且在数据传递时，确认机制、重传机制、拥塞控制机制等都会消耗大量的时间，而且要在每台设备上维护所有的传输连接，事实上，每个连接都会占用系统的CPU、内存等硬件资源。 而且，因为TCP有确认机制、三次握手机制，这些也导致TCP容易被人利用，实现DOS、DDOS、CC等攻击。</p>
-</blockquote>
-<blockquote>
-<p>UDP的优点： 快，比TCP稍安全 UDP没有TCP的握手、确认、窗口、重传、拥塞控制等机制，UDP是一个无状态的传输协议，所以它在传递数据时非常快。没有TCP的这些机制，UDP较TCP被攻击者利用的漏洞就要少一些。但UDP也是无法避免攻击的，比如：UDP Flood攻击…… UDP的缺点： 不可靠，不稳定 因为UDP没有TCP那些可靠的机制，在数据传递时，如果网络质量不好，就会很容易丢包。 基于上面的优缺点，那么： 什么时候应该使用TCP： 当对网络通讯质量有要求的时候，比如：整个数据要准确无误的传递给对方，这往往用于一些要求可靠的应用，比如HTTP、HTTPS、FTP等传输文件的协议，POP、SMTP等邮件传输的协议。 在日常生活中，常见使用TCP协议的应用如下： 浏览器，用的HTTP FlashFXP，用的FTP Outlook，用的POP、SMTP Putty，用的Telnet、SSH QQ文件传输 ………… 什么时候应该使用UDP： 当对网络通讯质量要求不高的时候，要求网络通讯速度能尽量的快，这时就可以使用UDP。 比如，日常生活中，常见使用UDP协议的应用如下： QQ语音 QQ视频 TFTP ……</p>
-</blockquote>
-<h3 id="IP报文解析"><a href="#IP报文解析" class="headerlink" title="IP报文解析"></a>IP报文解析</h3><p><a href="https://blog.csdn.net/deramer1/article/details/73410019" target="_blank" rel="noopener">ip报文传门</a></p>
+        <h3 id="我们都是差不多的人趴，从今天开始我会认真的去写博文"><a href="#我们都是差不多的人趴，从今天开始我会认真的去写博文" class="headerlink" title="我们都是差不多的人趴，从今天开始我会认真的去写博文"></a>我们都是差不多的人趴，从今天开始我会认真的去写博文</h3><p>其实也没什么好写的，我想了想<strong>我会认真的去对待每一天的生活，不是因为别的，孤独和无聊真的会吧一个人变得面目全非</strong><br>link<a href="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1562346097013&amp;di=2cdaa40eb362e80ba6c62ce52c2836f3&amp;imgtype=0&amp;src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201609%2F24%2F20160924105247_wkYzA.thumb.224_0.jpeg" target="_blank" rel="noopener">熊本熊</a></p>
 
     </article>
     <!-- license  -->
@@ -433,17 +404,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/07/05/踌躇满志，吃喝度日/" title="踌躇满志，吃喝度日~">
-                    <div class="nextTitle">踌躇满志，吃喝度日~</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2018/12/05/1.1和1.2/" title="计算机网络">
-                    <div class="prevTitle">计算机网络</div>
+                <a href="/2018/12/15/OSI七层/" title="TCP/IP与OSI">
+                    <div class="prevTitle">TCP/IP与OSI</div>
                 </a>
             
         </li>
@@ -562,7 +528,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#OSI"><span class="toc-number">1.</span> <span class="toc-text">OSI</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#OSI七层模型"><span class="toc-number">1.1.</span> <span class="toc-text">OSI七层模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mac地址"><span class="toc-number">1.2.</span> <span class="toc-text">mac地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IP地址"><span class="toc-number">1.3.</span> <span class="toc-text">IP地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TCP和UDP的区别"><span class="toc-number">1.4.</span> <span class="toc-text">TCP和UDP的区别</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IP报文解析"><span class="toc-number">2.</span> <span class="toc-text">IP报文解析</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#我们都是差不多的人趴，从今天开始我会认真的去写博文"><span class="toc-number">1.</span> <span class="toc-text">我们都是差不多的人趴，从今天开始我会认真的去写博文</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
