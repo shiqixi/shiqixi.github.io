@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>谁还没个ie梦 · Mr. Curiosity&#39;s Blog</title>
+    <title>PPP · Mr. Curiosity&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">石奇西与HCIE的恩怨情仇</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">谁还没个ie梦</a>
+                <a href="#" class="post-name">PPP</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            谁还没个ie梦
+            PPP
             <!-- 404 -->
             
         </h1>
@@ -266,12 +266,12 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">164</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">1.3k</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2018/12/04</span>
+                    <span class="post-intro-time">2019/07/07</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -395,10 +395,39 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="hcie-学习之路马上要开始了呀！"><a href="#hcie-学习之路马上要开始了呀！" class="headerlink" title="hcie 学习之路马上要开始了呀！"></a>hcie 学习之路马上要开始了呀！</h2><h3 id="我我我-一定会成为一个hcie的"><a href="#我我我-一定会成为一个hcie的" class="headerlink" title="我我我 一定会成为一个hcie的"></a>我我我 一定会成为一个hcie的</h3><blockquote>
-<p>当你想成为一个ccie的时候，你已经就是了。<br>  我是一个特别容易放弃的人，一路上来放弃了很多东西，朋友又或者学习，总是在不断的迷失<br>  又不断的追寻，只到有一天突然早晨起来不知道干嘛，然后突然清醒了，孤独真的是一个恐怖<br>  的东西。我也没曾想过会去学习，我在群问过一个大佬，我要考ccie的话该怎么学，他说：<strong>当你想成为一个ccie时，你就是了</strong>。</p>
-</blockquote>
-<p><img src="https://i.loli.net/2018/12/04/5c069327f24fc.jpg" alt="mmexport1543905767097.jpg"></p>
+        <h1 id="PPP"><a href="#PPP" class="headerlink" title="PPP"></a>PPP</h1><h3 id="WAN网常见接口PPP-MP；POS-IP-Trunk以及PPPoe"><a href="#WAN网常见接口PPP-MP；POS-IP-Trunk以及PPPoe" class="headerlink" title="WAN网常见接口PPP/MP；POS/IP-Trunk以及PPPoe"></a>WAN网常见接口PPP/MP；POS/IP-Trunk以及PPPoe</h3><p>PPP/MP：针对串口做的PPP，将多条链路聚合成一条链路<br>POS/IP-Trunk：POS是一种接口模式，而IP-Trunk，是一种运行在POS接口下的协议，而且只允许POS接口是HDLC协议<br>PPPoE：拨号上网</p>
+<p>注：<strong>如果PPP链路做聚合，那么它的ip地址是在逻辑接口下面配置的，而认证是要在物理接口下配置的</strong></p>
+<h3 id="PPP状态迁移"><a href="#PPP状态迁移" class="headerlink" title="PPP状态迁移"></a>PPP状态迁移</h3><ol>
+<li>Dead：这是一种PPP工作开始和结束的状态，当物理蹭变成UP时，PPP进入下一个状态Establish</li>
+<li>Establish： ppp在此阶段使用LCP协商链路层参数.如果链路参数协商不成功，则ppp建立不成功ppp退到Dead状态<br>协商成功（Open）进入Authenticate 状态</li>
+<li>Authenticate：ppp在这个阶段认证对端，如果认证失败，进入Terminate，如果认证成功或者对方没配置认证，进入Netwrok状态</li>
+<li>Netword：PPP在此阶段进行网络层协商（NCP），协商成功则ppp建立完成，协商不成功，或者管理员手动关闭，进入Terminate</li>
+<li>Terminate：链路终止状态，到这个状态会向对方发送Request，告知端口进行关闭，等待对方回应ACK，如果没等到重传两次 自动关闭</li>
+</ol>
+<h3 id="LCP报文类型"><a href="#LCP报文类型" class="headerlink" title="LCP报文类型"></a>LCP报文类型</h3><ol>
+<li>Request：包含发送者试图使用的，没有使用的默认参数列表</li>
+<li>ACK ：标示完全接受对端发送的Request的参数取值</li>
+<li>NAK: 表示对端发送的Requset中的参数取值在本地不合法</li>
+<li>Reject：表示对端发送的Requset中的参数在本地识别不出来</li>
+</ol>
+<h3 id="LCP-用于协商参数-（Requset-报文里面的东西）"><a href="#LCP-用于协商参数-（Requset-报文里面的东西）" class="headerlink" title="LCP-用于协商参数      （Requset 报文里面的东西）"></a>LCP-用于协商参数      （Requset 报文里面的东西）</h3><ol>
+<li>最大接收单元(MRU): ppp数据帧的长度，使用两端较小的值，默认值为1500</li>
+<li>认证协议：认证对端使用的认证协议，被认证方必须支持认证方的协议并正确配置，不然协商不成功</li>
+<li>魔术字：魔术字为随机产生的一个数字，用于检测链路环路，如果收到LCP报文中的魔术字与本地产生的魔术字相同的话，则认为链路有环路（一端支持一端不支持，表示链路无环，认为协商成功；两端都支持，则使用检测机制检测链路环路）</li>
+</ol>
+<h3 id="链路协商过程"><a href="#链路协商过程" class="headerlink" title="链路协商过程"></a>链路协商过程</h3><ol>
+<li>A与B路由器建立ppp连接时，协商参数   A给B发Requset  如果链路出了问题，B收不到A发的Requset，A三秒钟重传一次，最多发10次</li>
+<li>A于B路由器建立ppp连接时.协商参数     A给B发Requset，B收到了A的Requset，如果认可A的参数，协商成功；若果不认可A的部分参数会回NAK，A会从新调整参数发送过来了，5次拒绝的参数，不在参加协商</li>
+<li>A于B路由器建立ppp连接时.协商参数     A给B发Requset，B收到了A的Requset，如果有参数不认识，会回一个Reject报文，A会换掉那些不认识的参数，重新发一个Requset</li>
+</ol>
+<h3 id="检测链路状态"><a href="#检测链路状态" class="headerlink" title="检测链路状态"></a>检测链路状态</h3><p>LCP建立后，主动端会发Echo-Request而被动端会回一个Echo-Reply报文，表示链路正常，每10s一次</p>
+<h3 id="链路关闭"><a href="#链路关闭" class="headerlink" title="链路关闭"></a>链路关闭</h3><p>认证不成功，或者管理与员手动要关闭的话，发送Terminate-Requset，如果收到Terminate-Requset，必须回一个Terminate-ACK，如果对端没有回Terminate-ACK，重传两次两次Terminate-Requset，然后自动关闭</p>
+<h3 id="PAP认证"><a href="#PAP认证" class="headerlink" title="PAP认证"></a>PAP认证</h3><p>使用三种报文 Request；ACK；NAK<br>Requset携带认证的用户名和密码（在报文DATE字段里面），认证协商成功回ACK（DATE文本提示），不成功回NAK（DATE字段文本提示），只有两次报文交互</p>
+<p>由被认证方发送请求报文，而认证方发送ACK，NAK 报文</p>
+<h3 id="CHAP认证"><a href="#CHAP认证" class="headerlink" title="CHAP认证"></a>CHAP认证</h3><h4 id="报文"><a href="#报文" class="headerlink" title="报文"></a>报文</h4><p>Challeng：由被认证方发送Challeng，DATE字段包含Challeng信息，Challeng（id+随机数+用户名，用户名是可选的，如果接口下配置了用户名就加；id是用来标识本次认证会话的）<br>Response：由被验证放返回的用户信息，DATE 报文里面（id+密码+随机数）+用户名，进行md5计算，得出16位字符串<br>Success：认证方收到被认证方的Response时查看md5加密字符串，将自己的（id+密码+随机数）+用户名进行md5计算，一样则回Success报文，认证成功<br>Failure：认证方收到被认证方的Response时查看md5加密字符串，将自己的（id+密码+随机数）+用户名进行md5计算，如果不一样，则认证不成功，回Failure报文</p>
+<p><strong>所以 CHAP是一种三次握手的加密认证</strong></p>
+<h3 id="NCP验证"><a href="#NCP验证" class="headerlink" title="NCP验证"></a>NCP验证</h3><p>两端ip进行验证，验证ip是否冲突，或者合法<br>两端都要进行验证，首先发送Requset，里面包含自己的ip地址，如果对端认可回ACK，协商成功，不认可回NAK协商失败<br>静态NCP协商，就是两端都配置好了ip地址，那就动态，如果有一端没配置，那就用动态，分配<br>动态NCP<strong>注，如果两端协商ip地址时，有一端没配置ip时,回NAK，分配IP地址，在进行协商。</strong></p>
+<p><img src="http://img3.imgtn.bdimg.com/it/u=2628615850,12693509&amp;fm=26&amp;gp=0.jpg" alt="熊本熊"></p>
 
     </article>
     <!-- license  -->
@@ -407,13 +436,13 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2018/12/05/1.1和1.2/" title="计算机网络">
-                    <div class="nextTitle">计算机网络</div>
-                </a>
-            
         </li>
         <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/07/05/STP/" title="生成树">
+                    <div class="prevTitle">生成树</div>
+                </a>
             
         </li>
     </ul>
@@ -531,7 +560,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#hcie-学习之路马上要开始了呀！"><span class="toc-number">1.</span> <span class="toc-text">hcie 学习之路马上要开始了呀！</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#我我我-一定会成为一个hcie的"><span class="toc-number">1.1.</span> <span class="toc-text">我我我 一定会成为一个hcie的</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#PPP"><span class="toc-number">1.</span> <span class="toc-text">PPP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#WAN网常见接口PPP-MP；POS-IP-Trunk以及PPPoe"><span class="toc-number">1.0.1.</span> <span class="toc-text">WAN网常见接口PPP/MP；POS/IP-Trunk以及PPPoe</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PPP状态迁移"><span class="toc-number">1.0.2.</span> <span class="toc-text">PPP状态迁移</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LCP报文类型"><span class="toc-number">1.0.3.</span> <span class="toc-text">LCP报文类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LCP-用于协商参数-（Requset-报文里面的东西）"><span class="toc-number">1.0.4.</span> <span class="toc-text">LCP-用于协商参数      （Requset 报文里面的东西）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#链路协商过程"><span class="toc-number">1.0.5.</span> <span class="toc-text">链路协商过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#检测链路状态"><span class="toc-number">1.0.6.</span> <span class="toc-text">检测链路状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#链路关闭"><span class="toc-number">1.0.7.</span> <span class="toc-text">链路关闭</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PAP认证"><span class="toc-number">1.0.8.</span> <span class="toc-text">PAP认证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CHAP认证"><span class="toc-number">1.0.9.</span> <span class="toc-text">CHAP认证</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#报文"><span class="toc-number">1.0.9.1.</span> <span class="toc-text">报文</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NCP验证"><span class="toc-number">1.0.10.</span> <span class="toc-text">NCP验证</span></a></li></ol></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
