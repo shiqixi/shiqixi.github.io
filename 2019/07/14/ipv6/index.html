@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Mr. Curiosity&#39;s Blog</title>
+    <title>IPV6 · Mr. Curiosity&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">石奇西与HCIE的恩怨情仇</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">IPV6</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">石奇西与HCIE的恩怨情仇</a>
 </header>
@@ -220,24 +231,68 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            IPV6
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">535</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/07/14</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,325 +393,67 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/07/14/ipv6/">
-            
-                <span>IPV6</span>
-        </a>
-        <div class="abstract-content">
-            IPv6IPv6优点
-地址空间大
-实现自动配置和重新编址
-精简报文结构
-支持层次化网络结构
-支持端到端的安全
-支持更好的QOS
-支持移动特性
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="IPv6"><a href="#IPv6" class="headerlink" title="IPv6"></a>IPv6</h1><h3 id="IPv6优点"><a href="#IPv6优点" class="headerlink" title="IPv6优点"></a>IPv6优点</h3><ol>
+<li>地址空间大</li>
+<li>实现自动配置和重新编址</li>
+<li>精简报文结构</li>
+<li>支持层次化网络结构</li>
+<li>支持端到端的安全</li>
+<li>支持更好的QOS</li>
+<li>支持移动特性</li>
+</ol>
+<h3 id="IPv6地址结构"><a href="#IPv6地址结构" class="headerlink" title="IPv6地址结构"></a>IPv6地址结构</h3><p>ipv6地址分成两部分</p>
+<ol>
+<li>网络前缀</li>
+<li>接口标识 </li>
+</ol>
+<p>ipv6地址生成</p>
+<ol>
+<li>手工配置</li>
+<li>系统通过软件自动生成</li>
+<li>IEEE EUI-64规范自动生成（前面64比特为网络位，后面64比特为主机位，后面64比特是将MAC地址拿过来用，在中间插入FFFE，然后将第一个8比特位的第7位数，如果是0那么置1，如果是1那么置0）</li>
+</ol>
+<p>如果是通过IEEE EUI-64去分配    ISP可以给公司定义前面48位，而后面16位由公司自己定义，所以一个IPV6的地址可以分出来2的16次方的子网，加后面2的64次方的主机位，完全够用</p>
+<p>第一个字节的第7个比特，U/L（全球，本地），如果为0那么是由IEEE管理的，如果为1的话那么该地址由本地管理，他有时候为0位时要翻转，有时候不管为什么位都要翻转</p>
+<h3 id="IPV6地址分类"><a href="#IPV6地址分类" class="headerlink" title="IPV6地址分类"></a>IPV6地址分类</h3><ol>
+<li>单播地址：标识一个接口，目的为单播地址的报文将会被送到被标识的接口<br>本地回环地址：::/128        ,         ::1/128<br>链路本地地址： FE80::/10                （在链路接口上自动生成的）<br>全球单播地址：2001::/16           ,    2002::/16             ,      3FFE::/16（相当于ipv4的公网地址）<br>私网IPV6地址：FEC0::/10（和ipv4的内网地址一样）<br>IPV4兼容地址：0:0:0:0:0:0::/96(ipv4到ipv6互访的时候做映射用的)</li>
+<li>组播地址：标识多个接口，目的为组播地址的报文会被送到被标识的所有接口<br>FF00::/8    FF02::/104</li>
+<li>任播地址：标识多个接口，目的为任意播地址的报文会被送到最近的一个被标识的接口，最近节点是由路由协议来定义的，任播和单播同用一个地址空间。<br><strong>注:剩下的明天再更</strong><br><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1563120362467&amp;di=485dc61f9a1c1b65432f44b9d721cf43&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.yutudou.com%2Fuploads%2Fallimg%2F170308%2F1-1F30R05633-lp.jpg" alt="熊本熊"></li>
+</ol>
 
-IPv6地址结构ipv6地址分成两部分
-
-网络前缀
-接口标识 
-
-ipv6地址生成
-
-手工配置
-系统通过软件自动生成
-IEEE EUI-64规范自动生成（前面64比特为网络位，后面64比特为主机位，后面64比特是将MAC地址拿过来用，在中间插入FFFE，然后将第一个8比特位的第7位数，如果是0那么置1，如果是1那么置0）
-
-如果是通过IEEE EUI-64去分配    ISP可以给公司定义前面48位，而后面16位由公司自己定义，所以一个IPV6的...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/14</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/07/07/PPP/">
-            
-                <span>PPP</span>
-        </a>
-        <div class="abstract-content">
-            PPPWAN网常见接口PPP/MP；POS/IP-Trunk以及PPPoePPP/MP：针对串口做的PPP，将多条链路聚合成一条链路POS/IP-Trunk：POS是一种接口模式，而IP-Trunk，是一种运行在POS接口下的协议，而且只允许POS接口是HDLC协议PPPoE：拨号上网
-注：如果PPP链路做聚合，那么它的ip地址是在逻辑接口下面配置的，而认证是要在物理接口下配置的
-PPP状态迁移
-Dead：这是一种PPP工作开始和结束的状态，当物理蹭变成UP时，PPP进入下一个状态Establish
-Establish： ppp在此阶段使用LCP协商链路层参数.如果链路参数协商不成功，则...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/07</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/07/05/STP/">
-            
-                <span>生成树</span>
-        </a>
-        <div class="abstract-content">
-            STP/RSTP/MSTP为什么要生成树协议？因为交换机工作原理导致的，防环
-STP(生成树)优先级默认为32768 最大为61440BPDU
-配置BPDU——交互参数进行生成树计算（计算过程如下）
-
-桥ID  ：优先级（默认32768  范围0-61440 取值4096）+mac           比小
-cost ：非根交换机到达根交换机所有经过的路径之和（进接口叠加）3.转发桥ID：优先级（默认32768  范围0-61440 取值4096）+mac           比小4.优先级加端口号  优先级默认为128配置BPDU的报文有8个参与计算的有四个注：**Config Tim...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/05</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/07/05/Eth-Trunk/">
-            
-                <span>Eth-Trunk</span>
-        </a>
-        <div class="abstract-content">
-            Eth-Trunk问题一在手动聚合的时候，A端配置好，而B端Eth-Trunk没做的时候，A端发送一个广播报文过去，会从B端传回来，引起环路，而在LACP中就不会出现这种问题，因为手动聚合时，接口是直接UP的，而LACP中它需要两端都起来交换报文，选取角色后才能进入转发状态
-转发原理它是将多条以太网物理链路，绑定为一条逻辑链路从而实现增加链路带宽的目的，形成负载分担，提高链路的可靠性
-Eth-Trunk 处于MAC子层和LLC子层之间，是一个链路层协议
-LLC 用来对链路进行管理的                                          MAC：媒体介质控制子层...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/05</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/07/05/CSS与iStack/">
-            
-                <span>CSS与iStack</span>
-        </a>
-        <div class="abstract-content">
-            集群角色主交换机：负责管理整个集群，集群中只有一台主交换机备交换机：主交换机的备份，在主交换机出现业务故障时，将主交换机的全部业务交替过来，集群中只有一个备交换机集群ID：及CSS id 用来表识和管理集群成员交换机的，集群中成员交换机的ID是唯一的集群优先级：主要用来选举的时候确定成员交换机的角色的，优先值越大的越高，优先级高的被选成主的可能性越高
-选举
-最先启动，并进入单框集群运行状态的的交换机为主交换机
-两台集群交换机同时启动，集群优先级高的交换机为主交换机
-两台集群交换机同时启动，且集群优先级相同的情况下，那么mac小的为主
-两台集群交换机同时启动，且集群优先级相同；mac也相同...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/05</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/07/05/端口安全/">
-            
-                <span>端口安全</span>
-        </a>
-        <div class="abstract-content">
-            端口安全动态安全MAC在端口下开启默认的端口安全功能，在该端口只能学习到一个相对应的mac地址，将其进行绑定，虽然它也是通过动态学习的mac地址，但是与普通动态学习不同的是，普通动态的学习过程是–看源mac，没有就进行绑定然后转发，而安全功能默认开启后，在那个接口下只能学习一个mac地址并进行转发（端口阀值可以手动改，默认为1）功能的作用是限制谁可以进来的(有老化时间)
-sticky MAC开启功能后，做静态绑定，匹配静态绑定的mac才能进入
-在mac表中存在静态还有安全表项，静态功能是对应转发给别人的，而安全表项是限制了谁能进来
-端口安全的拒绝方式
-protect 学习mac地址超过端...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/05</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/07/05/MAC/">
-            
-                <span>MAC</span>
-        </a>
-        <div class="abstract-content">
-            MACMAC表的信息问题一 mac表的信息解：在mac地址表能看到的信息（mac地址，对应接口，所属vlan）mac地址有48位，前24位为厂商标识，后24位为厂商给每一个设备所分配的mac地址问题二：mac地址如何判定有多少个
-
-客户机如果是终端 那么有多少张网卡 就有多少个mac地址2.交换机上面的mac地址是根据它上面有多少个vlanif来判定的   
-路由器是根据接口来判定的，每一个接口对应一个mac地址
-
-问题三一个mac对应多个接口？和一个接口对应多个mac？
-
-一个mac不能对应多个接口。（在同一交换上）因为mac有一个学习的过程，如果在a接口学习了，在b接口又学习了。第一...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/05</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/07/05/踌躇满志，吃喝度日/">
-            
-                <span>踌躇满志，吃喝度日~</span>
-        </a>
-        <div class="abstract-content">
-            我们都是差不多的人趴，从今天开始我会认真的去写博文其实也没什么好写的，我想了想我会认真的去对待每一天的生活，不是因为别的，孤独和无聊真的会吧一个人变得面目全非
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/05</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/15/OSI七层/">
-            
-                <span>TCP/IP与OSI</span>
-        </a>
-        <div class="abstract-content">
-            文本提示：本篇文章讲的是TCP/IP基础,对应着OSI模型
-正文：
-OSI定义：OSI是Open System Interconnection的缩写，意为开放式系统互联。国际标准化组织（ISO）制定了OSI模型，该模型定义了不同计算机互联的标准，是设计和描述计算机网络通信的基本框架。
-
-这是一种事实上被TCP/IP 4层模型淘汰的协议。在当今世界上没有大规模使用。
-
-为什么要这个标准？因为如果没有统一标准的话，市场和技术非常混乱
-OSI七层模型 每一层对应的协议：
-
-TCP/IP 对应的OSI七层
-
-tcp/ip csdn讲解TCP/IP 四层模型，五层结构。物理层和数据链路层，必须分开...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/15</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/05/1.1和1.2/">
-            
-                <span>计算机网络</span>
-        </a>
-        <div class="abstract-content">
-            数据通信系统的组成一 通信组成1.发送方 2.接收方 3.介质 4.协议
-二  数据组成1bytes=8bt   最大一次可传输1500字节由  MTU(最大传输单元) 规定 
-三 数据流方向
-单工 ：数据单方向传输 接收方不能回复
-
-
-半双工：数据的接收方可以回复数据，但如果有一方在传输数据，另外一方需要等它传完，不能同时传输数据
-
-
-全双工：数据双方可以同时传输互不干扰（这也是现在网络的主流传输）
-
-计算机网络计算机网络分类
-1.LAN(局域网，园区网)将终端计算机连接入网
-
-
-2.城域网 连接范围内的局域网(城市)
-
-
-3.广域网 连接范围内的城域网（地区或国家）
-
-
-4.Inte...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/05</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/07/07/PPP/" title="PPP">
+                    <div class="prevTitle">PPP</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-    <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">NEXT &#62;</a>
-    </nav>
     
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -741,6 +538,24 @@ tcp/ip csdn讲解TCP/IP 四层模型，五层结构。物理层和数据链路�
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#IPv6"><span class="toc-number">1.</span> <span class="toc-text">IPv6</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#IPv6优点"><span class="toc-number">1.0.1.</span> <span class="toc-text">IPv6优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IPv6地址结构"><span class="toc-number">1.0.2.</span> <span class="toc-text">IPv6地址结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IPV6地址分类"><span class="toc-number">1.0.3.</span> <span class="toc-text">IPV6地址分类</span></a></li></ol></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1088,6 +903,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

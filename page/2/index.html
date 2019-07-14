@@ -78,8 +78,6 @@
     <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
     
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
 - testing support for link[rel=preload]
@@ -203,8 +201,10 @@
 </head>
 
     
+        <body class="home-body">
     
-<header class="header">
+    
+<header class="header index-header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
@@ -220,21 +220,34 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 文章页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/index-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
+            石奇西与HCIE的恩怨情仇
+            <!-- 文章页  -->
+            
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
+            
+            
+                it's better to burn out than to fade away
+            
+            <!-- 文章页  -->
             
         </p>
         <!-- 文章页meta -->
@@ -346,305 +359,21 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/07/14/ipv6/">
+        <a class="abstract-title" href="/2018/12/04/hcie/">
             
-                <span>IPV6</span>
+                <span>谁还没个ie梦</span>
         </a>
         <div class="abstract-content">
-            IPv6IPv6优点
-地址空间大
-实现自动配置和重新编址
-精简报文结构
-支持层次化网络结构
-支持端到端的安全
-支持更好的QOS
-支持移动特性
+            hcie 学习之路马上要开始了呀！我我我 一定会成为一个hcie的
+当你想成为一个ccie的时候，你已经就是了。  我是一个特别容易放弃的人，一路上来放弃了很多东西，朋友又或者学习，总是在不断的迷失  又不断的追寻，只到有一天突然早晨起来不知道干嘛，然后突然清醒了，孤独真的是一个恐怖  的东西。我也没曾想过会去学习，我在群问过一个大佬，我要考ccie的话该怎么学，他说：当你想成为一个ccie时，你就是了。
 
-IPv6地址结构ipv6地址分成两部分
 
-网络前缀
-接口标识 
-
-ipv6地址生成
-
-手工配置
-系统通过软件自动生成
-IEEE EUI-64规范自动生成（前面64比特为网络位，后面64比特为主机位，后面64比特是将MAC地址拿过来用，在中间插入FFFE，然后将第一个8比特位的第7位数，如果是0那么置1，如果是1那么置0）
-
-如果是通过IEEE EUI-64去分配    ISP可以给公司定义前面48位，而后面16位由公司自己定义，所以一个IPV6的...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/14</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/07/07/PPP/">
-            
-                <span>PPP</span>
-        </a>
-        <div class="abstract-content">
-            PPPWAN网常见接口PPP/MP；POS/IP-Trunk以及PPPoePPP/MP：针对串口做的PPP，将多条链路聚合成一条链路POS/IP-Trunk：POS是一种接口模式，而IP-Trunk，是一种运行在POS接口下的协议，而且只允许POS接口是HDLC协议PPPoE：拨号上网
-注：如果PPP链路做聚合，那么它的ip地址是在逻辑接口下面配置的，而认证是要在物理接口下配置的
-PPP状态迁移
-Dead：这是一种PPP工作开始和结束的状态，当物理蹭变成UP时，PPP进入下一个状态Establish
-Establish： ppp在此阶段使用LCP协商链路层参数.如果链路参数协商不成功，则...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/07</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/07/05/STP/">
-            
-                <span>生成树</span>
-        </a>
-        <div class="abstract-content">
-            STP/RSTP/MSTP为什么要生成树协议？因为交换机工作原理导致的，防环
-STP(生成树)优先级默认为32768 最大为61440BPDU
-配置BPDU——交互参数进行生成树计算（计算过程如下）
-
-桥ID  ：优先级（默认32768  范围0-61440 取值4096）+mac           比小
-cost ：非根交换机到达根交换机所有经过的路径之和（进接口叠加）3.转发桥ID：优先级（默认32768  范围0-61440 取值4096）+mac           比小4.优先级加端口号  优先级默认为128配置BPDU的报文有8个参与计算的有四个注：**Config Tim...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/05</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/07/05/Eth-Trunk/">
-            
-                <span>Eth-Trunk</span>
-        </a>
-        <div class="abstract-content">
-            Eth-Trunk问题一在手动聚合的时候，A端配置好，而B端Eth-Trunk没做的时候，A端发送一个广播报文过去，会从B端传回来，引起环路，而在LACP中就不会出现这种问题，因为手动聚合时，接口是直接UP的，而LACP中它需要两端都起来交换报文，选取角色后才能进入转发状态
-转发原理它是将多条以太网物理链路，绑定为一条逻辑链路从而实现增加链路带宽的目的，形成负载分担，提高链路的可靠性
-Eth-Trunk 处于MAC子层和LLC子层之间，是一个链路层协议
-LLC 用来对链路进行管理的                                          MAC：媒体介质控制子层...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/05</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/07/05/CSS与iStack/">
-            
-                <span>CSS与iStack</span>
-        </a>
-        <div class="abstract-content">
-            集群角色主交换机：负责管理整个集群，集群中只有一台主交换机备交换机：主交换机的备份，在主交换机出现业务故障时，将主交换机的全部业务交替过来，集群中只有一个备交换机集群ID：及CSS id 用来表识和管理集群成员交换机的，集群中成员交换机的ID是唯一的集群优先级：主要用来选举的时候确定成员交换机的角色的，优先值越大的越高，优先级高的被选成主的可能性越高
-选举
-最先启动，并进入单框集群运行状态的的交换机为主交换机
-两台集群交换机同时启动，集群优先级高的交换机为主交换机
-两台集群交换机同时启动，且集群优先级相同的情况下，那么mac小的为主
-两台集群交换机同时启动，且集群优先级相同；mac也相同...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/05</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/07/05/端口安全/">
-            
-                <span>端口安全</span>
-        </a>
-        <div class="abstract-content">
-            端口安全动态安全MAC在端口下开启默认的端口安全功能，在该端口只能学习到一个相对应的mac地址，将其进行绑定，虽然它也是通过动态学习的mac地址，但是与普通动态学习不同的是，普通动态的学习过程是–看源mac，没有就进行绑定然后转发，而安全功能默认开启后，在那个接口下只能学习一个mac地址并进行转发（端口阀值可以手动改，默认为1）功能的作用是限制谁可以进来的(有老化时间)
-sticky MAC开启功能后，做静态绑定，匹配静态绑定的mac才能进入
-在mac表中存在静态还有安全表项，静态功能是对应转发给别人的，而安全表项是限制了谁能进来
-端口安全的拒绝方式
-protect 学习mac地址超过端...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/05</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/07/05/MAC/">
-            
-                <span>MAC</span>
-        </a>
-        <div class="abstract-content">
-            MACMAC表的信息问题一 mac表的信息解：在mac地址表能看到的信息（mac地址，对应接口，所属vlan）mac地址有48位，前24位为厂商标识，后24位为厂商给每一个设备所分配的mac地址问题二：mac地址如何判定有多少个
-
-客户机如果是终端 那么有多少张网卡 就有多少个mac地址2.交换机上面的mac地址是根据它上面有多少个vlanif来判定的   
-路由器是根据接口来判定的，每一个接口对应一个mac地址
-
-问题三一个mac对应多个接口？和一个接口对应多个mac？
-
-一个mac不能对应多个接口。（在同一交换上）因为mac有一个学习的过程，如果在a接口学习了，在b接口又学习了。第一...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/05</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/07/05/踌躇满志，吃喝度日/">
-            
-                <span>踌躇满志，吃喝度日~</span>
-        </a>
-        <div class="abstract-content">
-            我们都是差不多的人趴，从今天开始我会认真的去写博文其实也没什么好写的，我想了想我会认真的去对待每一天的生活，不是因为别的，孤独和无聊真的会吧一个人变得面目全非
 
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/05</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/15/OSI七层/">
-            
-                <span>TCP/IP与OSI</span>
-        </a>
-        <div class="abstract-content">
-            文本提示：本篇文章讲的是TCP/IP基础,对应着OSI模型
-正文：
-OSI定义：OSI是Open System Interconnection的缩写，意为开放式系统互联。国际标准化组织（ISO）制定了OSI模型，该模型定义了不同计算机互联的标准，是设计和描述计算机网络通信的基本框架。
-
-这是一种事实上被TCP/IP 4层模型淘汰的协议。在当今世界上没有大规模使用。
-
-为什么要这个标准？因为如果没有统一标准的话，市场和技术非常混乱
-OSI七层模型 每一层对应的协议：
-
-TCP/IP 对应的OSI七层
-
-tcp/ip csdn讲解TCP/IP 四层模型，五层结构。物理层和数据链路层，必须分开...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/15</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/05/1.1和1.2/">
-            
-                <span>计算机网络</span>
-        </a>
-        <div class="abstract-content">
-            数据通信系统的组成一 通信组成1.发送方 2.接收方 3.介质 4.协议
-二  数据组成1bytes=8bt   最大一次可传输1500字节由  MTU(最大传输单元) 规定 
-三 数据流方向
-单工 ：数据单方向传输 接收方不能回复
-
-
-半双工：数据的接收方可以回复数据，但如果有一方在传输数据，另外一方需要等它传完，不能同时传输数据
-
-
-全双工：数据双方可以同时传输互不干扰（这也是现在网络的主流传输）
-
-计算机网络计算机网络分类
-1.LAN(局域网，园区网)将终端计算机连接入网
-
-
-2.城域网 连接范围内的局域网(城市)
-
-
-3.广域网 连接范围内的城域网（地区或国家）
-
-
-4.Inte...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/05</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/04</span>
             </div>
             <!-- tags  -->
             
@@ -654,11 +383,104 @@ tcp/ip csdn讲解TCP/IP 四层模型，五层结构。物理层和数据链路�
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">NEXT &#62;</a>
+        <a class="extend prev" rel="prev" href="/">&#60; PREV</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
     </nav>
     
 </main>
             <!-- profile -->
+            
+            <div class="profile">
+    <img class="profile-avatar" alt="avatar" src="https://avatars3.githubusercontent.com/u/39663821?s=460&v=4">
+    <div class="profile-name">Mr.Curiosi</div>
+    
+    <div class="profile-signature">
+        最后成了一个温柔的人
+    </div>
+    
+    
+    <div class="profile-social">
+        
+    
+        
+            
+                <a href="mailto:1636724271@qq.com" class="iconfont-archer email" title="email"></a>
+            
+        
+    
+        
+            
+                <a href="//shiqixi.github.io" class="iconfont-archer github" target="_blank" title="github"></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title="wechat">
+                  
+                  <img class="profile-qr" src="https://i.loli.net/2018/12/04/5c068a69c1084.jpg">
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    
+        <div class="friends">
+            <div>FRIENDS</div>
+            
+                
+                    <span>
+                        <a href="//www.shiqidong.com" target="_black">friendA</a>
+                    </span>
+                
+            
+                
+            
+                
+            
+        </div>
+    
+    
+        <div class="about-me">
+            <a href="/about">ABOUT ME</a>
+        </div>
+    
+</div>
             
         </div>
         <footer class="footer footer-unloaded">
